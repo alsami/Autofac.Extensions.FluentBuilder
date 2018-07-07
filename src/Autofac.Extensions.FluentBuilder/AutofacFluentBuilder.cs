@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Linq;
+using System.Reflection;
 using Autofac.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -82,6 +84,138 @@ namespace Autofac.Extensions.FluentBuilder
             this.builder.RegisterType(type)
                 .As<TType>()
                 .SingleInstance();
+
+            return this;
+        }
+
+        public AutofacFluentBuilder AddClosedTypeAsSingleton(Type closedType, params Assembly[] assemblies)
+        {
+            if (closedType == null)
+            {
+                throw new ArgumentNullException(nameof(closedType));
+            }
+
+            if (assemblies == null || !assemblies.Any())
+            {
+                throw new ArgumentNullException(nameof(assemblies), $"You must provide assemblies in order to register closing types for type { closedType.Name }");
+            }
+
+            this.builder.RegisterAssemblyTypes(assemblies)
+                .AsClosedTypesOf(closedType)
+                .AsImplementedInterfaces()
+                .SingleInstance();
+
+            return this;
+        }
+        
+        public AutofacFluentBuilder AddClosedTypeAsTransient(Type closedType, params Assembly[] assemblies)
+        {
+            if (closedType == null)
+            {
+                throw new ArgumentNullException(nameof(closedType));
+            }
+
+            if (assemblies == null || !assemblies.Any())
+            {
+                throw new ArgumentNullException(nameof(assemblies), $"You must provide assemblies in order to register closing types for type { closedType.Name }");
+            }
+
+            this.builder.RegisterAssemblyTypes(assemblies)
+                .AsClosedTypesOf(closedType)
+                .AsImplementedInterfaces()
+                .InstancePerDependency();
+
+            return this;
+        }
+        
+        public AutofacFluentBuilder AddClosedTypeAsScoped(Type closedType, params Assembly[] assemblies)
+        {
+            if (closedType == null)
+            {
+                throw new ArgumentNullException(nameof(closedType));
+            }
+
+            if (assemblies == null || !assemblies.Any())
+            {
+                throw new ArgumentNullException(nameof(assemblies), $"You must provide assemblies in order to register closing types for type { closedType.Name }");
+            }
+
+            this.builder.RegisterAssemblyTypes(assemblies)
+                .AsClosedTypesOf(closedType)
+                .AsImplementedInterfaces()
+                .InstancePerLifetimeScope();
+
+            return this;
+        }
+
+        public AutofacFluentBuilder AddGenericAsSingleton(Type genericImplementation, Type genericInterface)
+        {
+            if (genericImplementation == null || !genericImplementation.IsGenericType)
+            {
+                throw new ArgumentException(nameof(genericImplementation));
+            }
+            
+            if (genericInterface == null || !genericInterface.IsGenericType)
+            {
+                throw new ArgumentNullException(nameof(genericInterface));
+            }
+
+            if (!genericInterface.IsAssignableFrom(genericImplementation))
+            {
+                throw new ArgumentException(nameof(genericImplementation), $"The given type { genericImplementation.Name } is not assignable to { genericInterface }");
+            }
+
+            this.builder.RegisterGeneric(genericImplementation)
+                .As(genericInterface)
+                .SingleInstance();
+
+            return this;
+        }
+        
+        public AutofacFluentBuilder AddGenericAsTransient(Type genericImplementation, Type genericInterface)
+        {
+            if (genericImplementation == null || !genericImplementation.IsGenericType)
+            {
+                throw new ArgumentException(nameof(genericImplementation));
+            }
+            
+            if (genericInterface == null || !genericInterface.IsGenericType)
+            {
+                throw new ArgumentNullException(nameof(genericInterface));
+            }
+
+            if (!genericInterface.IsAssignableFrom(genericImplementation))
+            {
+                throw new ArgumentException(nameof(genericImplementation), $"The given type { genericImplementation.Name } is not assignable to { genericInterface }");
+            }
+
+            this.builder.RegisterGeneric(genericImplementation)
+                .As(genericInterface)
+                .InstancePerDependency();
+
+            return this;
+        }
+        
+        public AutofacFluentBuilder AddGenericAsScoped(Type genericImplementation, Type genericInterface)
+        {
+            if (genericImplementation == null || !genericImplementation.IsGenericType)
+            {
+                throw new ArgumentException(nameof(genericImplementation));
+            }
+            
+            if (genericInterface == null || !genericInterface.IsGenericType)
+            {
+                throw new ArgumentNullException(nameof(genericInterface));
+            }
+
+            if (!genericInterface.IsAssignableFrom(genericImplementation))
+            {
+                throw new ArgumentException(nameof(genericImplementation), $"The given type { genericImplementation.Name } is not assignable to { genericInterface }");
+            }
+
+            this.builder.RegisterGeneric(genericImplementation)
+                .As(genericInterface)
+                .InstancePerLifetimeScope();
 
             return this;
         }
