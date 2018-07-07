@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="Modules" />
+    <Folder Include="Scoped" />
+    <Folder Include="Singletones" />
+    <Folder Include="Transient" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Autofac.Extensions.FluentBuilder\Autofac.Extensions.FluentBuilder.csproj" />
+  </ItemGroup>
+</Project>

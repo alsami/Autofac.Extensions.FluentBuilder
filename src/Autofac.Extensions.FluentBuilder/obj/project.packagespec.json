@@ -1,0 +1,51 @@
+﻿{
+  "version": "1.0.0",
+  "restore": {
+    "projectUniqueName": "/home/firebirdy/Dev/autofac-extensions-fluentbuilder/src/Autofac.Extensions.FluentBuilder/Autofac.Extensions.FluentBuilder.csproj",
+    "projectName": "Autofac.Extensions.FluentBuilder",
+    "projectPath": "/home/firebirdy/Dev/autofac-extensions-fluentbuilder/src/Autofac.Extensions.FluentBuilder/Autofac.Extensions.FluentBuilder.csproj",
+    "outputPath": "/home/firebirdy/Dev/autofac-extensions-fluentbuilder/src/Autofac.Extensions.FluentBuilder/obj/",
+    "projectStyle": "PackageReference",
+    "fallbackFolders": [
+      "/usr/share/dotnet/sdk/NuGetFallbackFolder"
+    ],
+    "originalTargetFrameworks": [
+      "netstandard2.0"
+    ],
+    "frameworks": {
+      "netstandard2.0": {
+        "projectReferences": {}
+      }
+    },
+    "warningProperties": {
+      "warnAsError": [
+        "NU1605"
+      ]
+    }
+  },
+  "frameworks": {
+    "netstandard2.0": {
+      "dependencies": {
+        "Autofac.Extensions.DependencyInjection": {
+          "target": "Package",
+          "version": "[4.2.2, )"
+        },
+        "Microsoft.Extensions.DependencyInjection": {
+          "target": "Package",
+          "version": "[2.1.1, )"
+        },
+        "NETStandard.Library": {
+          "suppressParent": "All",
+          "target": "Package",
+          "version": "[2.0.3, )",
+          "autoReferenced": true
+        }
+      },
+      "imports": [
+        "net461"
+      ],
+      "assetTargetFallback": true,
+      "warn": true
+    }
+  }
+}

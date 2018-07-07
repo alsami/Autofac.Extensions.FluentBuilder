@@ -1,0 +1,47 @@
+﻿{
+  "version": "1.0.0",
+  "restore": {
+    "projectUniqueName": "/home/firebirdy/Dev/autofac-extensions-fluentbuilder/test/Autofac.Extensions.FluentBuilder.TestInfrastructure/Autofac.Extensions.FluentBuilder.TestInfrastructure.csproj",
+    "projectName": "Autofac.Extensions.FluentBuilder.TestInfrastructure",
+    "projectPath": "/home/firebirdy/Dev/autofac-extensions-fluentbuilder/test/Autofac.Extensions.FluentBuilder.TestInfrastructure/Autofac.Extensions.FluentBuilder.TestInfrastructure.csproj",
+    "outputPath": "/home/firebirdy/Dev/autofac-extensions-fluentbuilder/test/Autofac.Extensions.FluentBuilder.TestInfrastructure/obj/",
+    "projectStyle": "PackageReference",
+    "fallbackFolders": [
+      "/usr/share/dotnet/sdk/NuGetFallbackFolder"
+    ],
+    "originalTargetFrameworks": [
+      "netstandard2.0"
+    ],
+    "frameworks": {
+      "netstandard2.0": {
+        "projectReferences": {
+          "/home/firebirdy/Dev/autofac-extensions-fluentbuilder/src/Autofac.Extensions.FluentBuilder/Autofac.Extensions.FluentBuilder.csproj": {
+            "projectPath": "/home/firebirdy/Dev/autofac-extensions-fluentbuilder/src/Autofac.Extensions.FluentBuilder/Autofac.Extensions.FluentBuilder.csproj"
+          }
+        }
+      }
+    },
+    "warningProperties": {
+      "warnAsError": [
+        "NU1605"
+      ]
+    }
+  },
+  "frameworks": {
+    "netstandard2.0": {
+      "dependencies": {
+        "NETStandard.Library": {
+          "suppressParent": "All",
+          "target": "Package",
+          "version": "[2.0.3, )",
+          "autoReferenced": true
+        }
+      },
+      "imports": [
+        "net461"
+      ],
+      "assetTargetFallback": true,
+      "warn": true
+    }
+  }
+}
