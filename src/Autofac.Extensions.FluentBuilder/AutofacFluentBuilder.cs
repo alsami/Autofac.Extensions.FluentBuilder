@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Reflection;
+using Autofac.Core;
 using Autofac.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -88,7 +89,7 @@ namespace Autofac.Extensions.FluentBuilder
             return this;
         }
 
-        public AutofacFluentBuilder AddClosedTypeAsSingleton(Type closedType, params Assembly[] assemblies)
+        public AutofacFluentBuilder AddClosedTypeAsSingleton(Type closedType, Assembly[] assemblies, params ResolvedParameter[] resolvedParameters)
         {
             if (closedType == null)
             {
@@ -100,15 +101,20 @@ namespace Autofac.Extensions.FluentBuilder
                 throw new ArgumentNullException(nameof(assemblies), $"You must provide assemblies in order to register closing types for type { closedType.Name }");
             }
 
-            this.builder.RegisterAssemblyTypes(assemblies)
+            var registrationBuilder = this.builder.RegisterAssemblyTypes(assemblies)
                 .AsClosedTypesOf(closedType)
                 .AsImplementedInterfaces()
                 .SingleInstance();
 
+            foreach (var resolvedParamter in resolvedParameters)
+            {
+                registrationBuilder.WithParameter(resolvedParamter);
+            }
+
             return this;
         }
         
-        public AutofacFluentBuilder AddClosedTypeAsTransient(Type closedType, params Assembly[] assemblies)
+        public AutofacFluentBuilder AddClosedTypeAsTransient(Type closedType, Assembly[] assemblies, params ResolvedParameter[] resolvedParameters)
         {
             if (closedType == null)
             {
@@ -120,15 +126,20 @@ namespace Autofac.Extensions.FluentBuilder
                 throw new ArgumentNullException(nameof(assemblies), $"You must provide assemblies in order to register closing types for type { closedType.Name }");
             }
 
-            this.builder.RegisterAssemblyTypes(assemblies)
+            var registrationBuilder = this.builder.RegisterAssemblyTypes(assemblies)
                 .AsClosedTypesOf(closedType)
                 .AsImplementedInterfaces()
                 .InstancePerDependency();
+            
+            foreach (var resolvedParamter in resolvedParameters)
+            {
+                registrationBuilder.WithParameter(resolvedParamter);
+            }
 
             return this;
         }
         
-        public AutofacFluentBuilder AddClosedTypeAsScoped(Type closedType, params Assembly[] assemblies)
+        public AutofacFluentBuilder AddClosedTypeAsScoped(Type closedType, Assembly[] assemblies, params ResolvedParameter[] resolvedParameters)
         {
             if (closedType == null)
             {
@@ -140,10 +151,15 @@ namespace Autofac.Extensions.FluentBuilder
                 throw new ArgumentNullException(nameof(assemblies), $"You must provide assemblies in order to register closing types for type { closedType.Name }");
             }
 
-            this.builder.RegisterAssemblyTypes(assemblies)
+            var registrationBuilder = this.builder.RegisterAssemblyTypes(assemblies)
                 .AsClosedTypesOf(closedType)
                 .AsImplementedInterfaces()
                 .InstancePerLifetimeScope();
+            
+            foreach (var resolvedParamter in resolvedParameters)
+            {
+                registrationBuilder.WithParameter(resolvedParamter);
+            }
 
             return this;
         }

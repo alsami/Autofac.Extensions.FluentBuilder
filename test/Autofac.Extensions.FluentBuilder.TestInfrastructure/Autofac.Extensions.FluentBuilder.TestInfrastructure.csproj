@@ -3,6 +3,8 @@
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
+    <Folder Include="ClosedTypes" />
+    <Folder Include="Generics" />
     <Folder Include="Modules" />
     <Folder Include="Scoped" />
     <Folder Include="Singletones" />
