@@ -12,6 +12,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "misc", "misc", "{37705C94-B
 ProjectSection(SolutionItems) = preProject
 	licence.md = licence.md
 	readme.md = readme.md
+	.gitignore = .gitignore
 EndProjectSection
 EndProject
 Global
