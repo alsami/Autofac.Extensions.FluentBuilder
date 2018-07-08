@@ -9,7 +9,7 @@
 ### Features
 
 * Registering types with and without interfaces as scoped-, transient- and single-instances
-* Registering registring instances with a given type
+* Registering instances with a given type
 * Registering generics as scoped-, transient- and single-instances
 * Registering closed-types using assembly-scanning with possible resolved-parameters as scoped-, transient- and single-instances
 * Registering modules with and without parameters
