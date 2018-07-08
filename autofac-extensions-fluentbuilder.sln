@@ -15,6 +15,8 @@ ProjectSection(SolutionItems) = preProject
 	.gitignore = .gitignore
 EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Autofac.Extensions.FluentBuilder.IntegrationTests", "test\Autofac.Extensions.FluentBuilder.IntegrationTests\Autofac.Extensions.FluentBuilder.IntegrationTests.csproj", "{AA6E0E32-E959-4FA0-9D16-5A7B081F9A31}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,6 +25,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{7C795165-B678-4CA1-B3F1-1ED531B1E576} = {754D64AD-258D-441E-A3EC-FBBF8A65EF8E}
 		{D140070B-BDC8-4BB9-9A22-AA835992314F} = {244E5428-D112-4903-8170-213A89C351E5}
+		{AA6E0E32-E959-4FA0-9D16-5A7B081F9A31} = {244E5428-D112-4903-8170-213A89C351E5}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{7C795165-B678-4CA1-B3F1-1ED531B1E576}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -33,5 +36,9 @@ Global
 		{D140070B-BDC8-4BB9-9A22-AA835992314F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D140070B-BDC8-4BB9-9A22-AA835992314F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D140070B-BDC8-4BB9-9A22-AA835992314F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA6E0E32-E959-4FA0-9D16-5A7B081F9A31}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA6E0E32-E959-4FA0-9D16-5A7B081F9A31}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA6E0E32-E959-4FA0-9D16-5A7B081F9A31}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA6E0E32-E959-4FA0-9D16-5A7B081F9A31}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

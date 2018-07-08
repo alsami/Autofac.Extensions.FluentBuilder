@@ -70,19 +70,19 @@ namespace Autofac.Extensions.FluentBuilder
             return this;
         }
 
-        public AutofacFluentBuilder RegisterInstance<TType>(Type type)
+        public AutofacFluentBuilder RegisterInstance<TType>(object @object)
         {
-            if (type == null)
+            if (@object == null)
             {
-                throw new ArgumentNullException(nameof(type));
+                throw new ArgumentNullException(nameof(@object));
             }
             
-            if (!type.IsAssignableFrom(typeof(TType)))
+            if (!(@object is TType))
             {
-                throw new ArgumentException(nameof(type), $"The given type { type.Name } is not assignable to { (typeof(TType).Name) }");
+                throw new ArgumentException(nameof(@object), $"The given type { @object.GetType().Name } is not assignable to { (typeof(TType).Name) }");
             }
 
-            this.builder.RegisterType(type)
+            this.builder.RegisterInstance(@object)
                 .As<TType>()
                 .SingleInstance();
 
@@ -164,73 +164,73 @@ namespace Autofac.Extensions.FluentBuilder
             return this;
         }
 
-        public AutofacFluentBuilder AddGenericAsSingleton(Type genericImplementation, Type genericInterface)
+        public AutofacFluentBuilder AddGenericAsSingleton(Type genericImplementationType, Type genericInterfaceType)
         {
-            if (genericImplementation == null || !genericImplementation.IsGenericType)
+            if (genericImplementationType == null || !genericImplementationType.IsGenericType)
             {
-                throw new ArgumentException(nameof(genericImplementation));
+                throw new ArgumentException(nameof(genericImplementationType));
             }
             
-            if (genericInterface == null || !genericInterface.IsGenericType)
+            if (genericInterfaceType == null || !genericInterfaceType.IsGenericType)
             {
-                throw new ArgumentNullException(nameof(genericInterface));
+                throw new ArgumentNullException(nameof(genericInterfaceType));
+            }
+            
+            if (!genericImplementationType.ClosesType(genericInterfaceType))
+            {
+                throw new ArgumentException(nameof(genericImplementationType), $"The given type { genericImplementationType.Name } is not assignable to { genericInterfaceType }");
             }
 
-            if (!genericInterface.IsAssignableFrom(genericImplementation))
-            {
-                throw new ArgumentException(nameof(genericImplementation), $"The given type { genericImplementation.Name } is not assignable to { genericInterface }");
-            }
-
-            this.builder.RegisterGeneric(genericImplementation)
-                .As(genericInterface)
+            this.builder.RegisterGeneric(genericImplementationType)
+                .As(genericInterfaceType)
                 .SingleInstance();
 
             return this;
         }
         
-        public AutofacFluentBuilder AddGenericAsTransient(Type genericImplementation, Type genericInterface)
+        public AutofacFluentBuilder AddGenericAsTransient(Type genericImplementationType, Type genericInterfaceType)
         {
-            if (genericImplementation == null || !genericImplementation.IsGenericType)
+            if (genericImplementationType == null || !genericImplementationType.IsGenericType)
             {
-                throw new ArgumentException(nameof(genericImplementation));
+                throw new ArgumentException(nameof(genericImplementationType));
             }
             
-            if (genericInterface == null || !genericInterface.IsGenericType)
+            if (genericInterfaceType == null || !genericInterfaceType.IsGenericType)
             {
-                throw new ArgumentNullException(nameof(genericInterface));
+                throw new ArgumentNullException(nameof(genericInterfaceType));
             }
 
-            if (!genericInterface.IsAssignableFrom(genericImplementation))
+            if (!genericImplementationType.ClosesType(genericInterfaceType))
             {
-                throw new ArgumentException(nameof(genericImplementation), $"The given type { genericImplementation.Name } is not assignable to { genericInterface }");
+                throw new ArgumentException(nameof(genericImplementationType), $"The given type { genericImplementationType.Name } is not assignable to { genericInterfaceType }");
             }
 
-            this.builder.RegisterGeneric(genericImplementation)
-                .As(genericInterface)
+            this.builder.RegisterGeneric(genericImplementationType)
+                .As(genericInterfaceType)
                 .InstancePerDependency();
 
             return this;
         }
         
-        public AutofacFluentBuilder AddGenericAsScoped(Type genericImplementation, Type genericInterface)
+        public AutofacFluentBuilder AddGenericAsScoped(Type genericImplementationType, Type genericInterfaceType)
         {
-            if (genericImplementation == null || !genericImplementation.IsGenericType)
+            if (genericImplementationType == null || !genericImplementationType.IsGenericType)
             {
-                throw new ArgumentException(nameof(genericImplementation));
+                throw new ArgumentException(nameof(genericImplementationType));
             }
             
-            if (genericInterface == null || !genericInterface.IsGenericType)
+            if (genericInterfaceType == null || !genericInterfaceType.IsGenericType)
             {
-                throw new ArgumentNullException(nameof(genericInterface));
+                throw new ArgumentNullException(nameof(genericInterfaceType));
             }
 
-            if (!genericInterface.IsAssignableFrom(genericImplementation))
+            if (!genericImplementationType.ClosesType(genericInterfaceType))
             {
-                throw new ArgumentException(nameof(genericImplementation), $"The given type { genericImplementation.Name } is not assignable to { genericInterface }");
+                throw new ArgumentException(nameof(genericImplementationType), $"The given type { genericImplementationType.Name } is not assignable to { genericInterfaceType }");
             }
 
-            this.builder.RegisterGeneric(genericImplementation)
-                .As(genericInterface)
+            this.builder.RegisterGeneric(genericImplementationType)
+                .As(genericInterfaceType)
                 .InstancePerLifetimeScope();
 
             return this;
