@@ -13,9 +13,12 @@ ProjectSection(SolutionItems) = preProject
 	licence.md = licence.md
 	readme.md = readme.md
 	.gitignore = .gitignore
+	changelog.md = changelog.md
 EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Autofac.Extensions.FluentBuilder.IntegrationTests", "test\Autofac.Extensions.FluentBuilder.IntegrationTests\Autofac.Extensions.FluentBuilder.IntegrationTests.csproj", "{AA6E0E32-E959-4FA0-9D16-5A7B081F9A31}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samples", "samples", "{5A9D1681-E609-4696-AF56-04330903E13D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

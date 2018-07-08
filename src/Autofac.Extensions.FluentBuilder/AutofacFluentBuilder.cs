@@ -108,7 +108,8 @@ namespace Autofac.Extensions.FluentBuilder
 
             foreach (var resolvedParamter in resolvedParameters)
             {
-                registrationBuilder.WithParameter(resolvedParamter);
+                registrationBuilder.WithParameter(resolvedParamter)
+                    .SingleInstance();
             }
 
             return this;
@@ -133,7 +134,8 @@ namespace Autofac.Extensions.FluentBuilder
             
             foreach (var resolvedParamter in resolvedParameters)
             {
-                registrationBuilder.WithParameter(resolvedParamter);
+                registrationBuilder.WithParameter(resolvedParamter)
+                    .InstancePerDependency();
             }
 
             return this;
@@ -158,7 +160,8 @@ namespace Autofac.Extensions.FluentBuilder
             
             foreach (var resolvedParamter in resolvedParameters)
             {
-                registrationBuilder.WithParameter(resolvedParamter);
+                registrationBuilder.WithParameter(resolvedParamter)
+                    .InstancePerLifetimeScope();
             }
 
             return this;
