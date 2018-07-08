@@ -20,6 +20,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Autofac.Extensions.FluentBu
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samples", "samples", "{5A9D1681-E609-4696-AF56-04330903E13D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Autofac.Extensions.FluentBuilder.Samples.Shared", "samples\Autofac.Extensions.FluentBuilder.Samples.Shared\Autofac.Extensions.FluentBuilder.Samples.Shared.csproj", "{570F690F-2451-4E8E-BA09-7C59E319AA47}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Autofac.Extensions.FluentBuilder.Samples.Console", "samples\Autofac.Extensions.FluentBuilder.Samples.Console\Autofac.Extensions.FluentBuilder.Samples.Console.csproj", "{4D067997-28C4-4021-994E-9AC2CFF0A419}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,6 +33,8 @@ Global
 		{7C795165-B678-4CA1-B3F1-1ED531B1E576} = {754D64AD-258D-441E-A3EC-FBBF8A65EF8E}
 		{D140070B-BDC8-4BB9-9A22-AA835992314F} = {244E5428-D112-4903-8170-213A89C351E5}
 		{AA6E0E32-E959-4FA0-9D16-5A7B081F9A31} = {244E5428-D112-4903-8170-213A89C351E5}
+		{570F690F-2451-4E8E-BA09-7C59E319AA47} = {5A9D1681-E609-4696-AF56-04330903E13D}
+		{4D067997-28C4-4021-994E-9AC2CFF0A419} = {5A9D1681-E609-4696-AF56-04330903E13D}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{7C795165-B678-4CA1-B3F1-1ED531B1E576}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -43,5 +49,13 @@ Global
 		{AA6E0E32-E959-4FA0-9D16-5A7B081F9A31}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AA6E0E32-E959-4FA0-9D16-5A7B081F9A31}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AA6E0E32-E959-4FA0-9D16-5A7B081F9A31}.Release|Any CPU.Build.0 = Release|Any CPU
+		{570F690F-2451-4E8E-BA09-7C59E319AA47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{570F690F-2451-4E8E-BA09-7C59E319AA47}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{570F690F-2451-4E8E-BA09-7C59E319AA47}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{570F690F-2451-4E8E-BA09-7C59E319AA47}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D067997-28C4-4021-994E-9AC2CFF0A419}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D067997-28C4-4021-994E-9AC2CFF0A419}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D067997-28C4-4021-994E-9AC2CFF0A419}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D067997-28C4-4021-994E-9AC2CFF0A419}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
