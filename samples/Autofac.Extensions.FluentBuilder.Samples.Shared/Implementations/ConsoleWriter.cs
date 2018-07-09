@@ -3,7 +3,7 @@ using Autofac.Extensions.FluentBuilder.Samples.Shared.Interfaces;
 
 namespace Autofac.Extensions.FluentBuilder.Samples.Shared.Implementations
 {
-    public class WriteToConsole : IWriterToConsole
+    public class ConsoleWriter : IConsoleWriter
     {
         public void Write(string message, ConsoleColor consoleColor)
         {

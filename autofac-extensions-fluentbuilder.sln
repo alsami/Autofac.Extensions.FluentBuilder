@@ -24,6 +24,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Autofac.Extensions.FluentBu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Autofac.Extensions.FluentBuilder.Samples.Console", "samples\Autofac.Extensions.FluentBuilder.Samples.Console\Autofac.Extensions.FluentBuilder.Samples.Console.csproj", "{4D067997-28C4-4021-994E-9AC2CFF0A419}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Autofac.Extensions.FluentBuilder.Samples.WebApi", "samples\Autofac.Extensions.FluentBuilder.Samples.WebApi\Autofac.Extensions.FluentBuilder.Samples.WebApi.csproj", "{4141E285-5BA1-4590-B1C7-C14E7626F3BF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +37,7 @@ Global
 		{AA6E0E32-E959-4FA0-9D16-5A7B081F9A31} = {244E5428-D112-4903-8170-213A89C351E5}
 		{570F690F-2451-4E8E-BA09-7C59E319AA47} = {5A9D1681-E609-4696-AF56-04330903E13D}
 		{4D067997-28C4-4021-994E-9AC2CFF0A419} = {5A9D1681-E609-4696-AF56-04330903E13D}
+		{4141E285-5BA1-4590-B1C7-C14E7626F3BF} = {5A9D1681-E609-4696-AF56-04330903E13D}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{7C795165-B678-4CA1-B3F1-1ED531B1E576}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -57,5 +60,9 @@ Global
 		{4D067997-28C4-4021-994E-9AC2CFF0A419}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4D067997-28C4-4021-994E-9AC2CFF0A419}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4D067997-28C4-4021-994E-9AC2CFF0A419}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4141E285-5BA1-4590-B1C7-C14E7626F3BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4141E285-5BA1-4590-B1C7-C14E7626F3BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4141E285-5BA1-4590-B1C7-C14E7626F3BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4141E285-5BA1-4590-B1C7-C14E7626F3BF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
