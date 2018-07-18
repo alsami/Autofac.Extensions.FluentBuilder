@@ -9,7 +9,7 @@ namespace Autofac.Extensions.FluentBuilder
         {
             var anyBaseTypeImplementsGenericInterface = false;
             
-            if (type.BaseType == null)
+            if (type.BaseType != null)
             {
                 anyBaseTypeImplementsGenericInterface = type.BaseType.ClosesType(genericInterfaceType);
             }

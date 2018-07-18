@@ -1,12 +1,18 @@
-## [1.0.1](https://www.nuget.org/packages/Autofac.Extensions.FluentBuilder/1.0.1) (2018-07-08)
+# [1.0.2](https://www.nuget.org/packages/Autofac.Extensions.FluentBuilder/1.0.2) (2018-07-18)
 
-### Bugfixes
+## Bugfixes
+
+* Fix a derp in typeextension that was meant to check for closing types, if it contains a basetype whether it is abstract or not
+
+# [1.0.1](https://www.nuget.org/packages/Autofac.Extensions.FluentBuilder/1.0.1) (2018-07-08)
+
+## Bugfixes
 
 * When registering closed-types with resolved-parameters, parameters are now scoped according to the function (singleton, transient or scoped)
 
-## [1.0.0](https://www.nuget.org/packages/Autofac.Extensions.FluentBuilder/1.0.0) (2018-07-08)
+# [1.0.0](https://www.nuget.org/packages/Autofac.Extensions.FluentBuilder/1.0.0) (2018-07-08)
 
-### Features
+## Features
 
 * Registering types with and without interfaces as scoped-, transient- and single-instances
 * Registering instances with a given type
