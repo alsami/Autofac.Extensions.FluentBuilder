@@ -2,8 +2,8 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <LangVersion>7.2</LangVersion>
-    <Version>1.0.2</Version>
-    <FileVersion>1.0.2.0</FileVersion>
+    <Version>1.1.0</Version>
+    <FileVersion>1.1.0.0</FileVersion>
     <Copyright>2018©CleanCode-Labs</Copyright>
     <Authors>Sami Al Khatib</Authors>
     <Title>Autofac-Fluentbuilder</Title>
@@ -14,7 +14,7 @@
     <RepositoryUrl>git://github.com/cleancodelabs/Autofac.Extensions.FluentBuilder</RepositoryUrl>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="4.2.2" />
+    <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="4.3.0" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="2.1.1" />
   </ItemGroup>
 </Project>

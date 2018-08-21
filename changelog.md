@@ -1,3 +1,9 @@
+# [1.1.0](https://www.nuget.org/packages/Autofac.Extensions.FluentBuilder/1.0.2) (2018-08-21)
+
+## Features
+
+* Update to latest Autofac.Extensions.Microsoft.DependencyInjection package
+
 # [1.0.2](https://www.nuget.org/packages/Autofac.Extensions.FluentBuilder/1.0.2) (2018-07-18)
 
 ## Bugfixes
