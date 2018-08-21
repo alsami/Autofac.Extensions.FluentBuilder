@@ -16,7 +16,7 @@ dotnet add package Autofac.Extensions.FluentBuilder
 If you want to add a specific version of this package
 
 ```
-dotnet add package Autofac.Extensions.FluentBuilder -v 1.0.0
+dotnet add package Autofac.Extensions.FluentBuilder --version 1.0.0
 ```
 
 For more information please visit the official [dotnet-cli documentation](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-add-package).
