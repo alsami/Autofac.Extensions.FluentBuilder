@@ -1,3 +1,19 @@
+# [1.3.1](https://www.nuget.org/packages/Autofac.Extensions.FluentBuilder/1.3.1) (2019-03-17)
+
+## Chore
+
+* Add package-icon
+
+# [1.3.0](https://www.nuget.org/packages/Autofac.Extensions.FluentBuilder/1.3.0) (2019-03-17)
+
+## Features
+
+* Update to latest version of Autofac
+
+## Chore
+
+* Adjust copyright notice
+
 # [1.2.0](https://www.nuget.org/packages/Autofac.Extensions.FluentBuilder/1.2.0) (2018-12-11)
 
 ## Features
