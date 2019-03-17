@@ -1,3 +1,9 @@
+# [1.4.0](https://www.nuget.org/packages/Autofac.Extensions.FluentBuilder/1.4.0) (2019-03-17)
+
+## Features
+
+* Update Autofac.Extensions.DependencyInjection to version 4.4.0
+
 # [1.3.1](https://www.nuget.org/packages/Autofac.Extensions.FluentBuilder/1.3.1) (2019-03-17)
 
 ## Chore
@@ -8,7 +14,7 @@
 
 ## Features
 
-* Update to latest version of Autofac
+* Update Autofac to version 4.9.1
 
 ## Chore
 
