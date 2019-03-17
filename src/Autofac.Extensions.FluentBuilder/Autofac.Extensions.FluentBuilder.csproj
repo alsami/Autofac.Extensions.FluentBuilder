@@ -2,14 +2,14 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <LangVersion>7.2</LangVersion>
-    <Version>1.1.0</Version>
-    <FileVersion>1.1.0.0</FileVersion>
-    <Copyright>2018©CleanCode-Labs</Copyright>
+    <Version>1.3.0</Version>
+    <FileVersion>1.3.0.0</FileVersion>
+    <Copyright>2019©CleanCode-Labs</Copyright>
     <Authors>Sami Al Khatib</Authors>
     <Title>Autofac-Fluentbuilder</Title>
     <Description>A fluentbuilder for Autofac that covers the most necessary use-cases for building the autofac-container wrapped in fluentbuilder that can also be combined with microsoft's dependencyinjection provider.</Description>
     <PackageProjectUrl>https://github.com/cleancodelabs/Autofac.Extensions.FluentBuilder</PackageProjectUrl>
-    <PackageTags>Autofac, Fluentbuilder, Simple, Clean, Scopes, Generics, Closingtypes</PackageTags>
+    <PackageTags>Autofac, Fluentbuilder, Simple, Clean, Scopes, Generics, Closed-Types</PackageTags>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>git://github.com/cleancodelabs/Autofac.Extensions.FluentBuilder</RepositoryUrl>
   </PropertyGroup>
