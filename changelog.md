@@ -1,3 +1,9 @@
+# [1.5.0](https://www.nuget.org/packages/Autofac.Extensions.FluentBuilder/1.5.0) (2019-03-17)
+
+## Features
+
+* Add functionality to register typed and none-typed resolver
+
 # [1.4.0](https://www.nuget.org/packages/Autofac.Extensions.FluentBuilder/1.4.0) (2019-03-17)
 
 ## Features

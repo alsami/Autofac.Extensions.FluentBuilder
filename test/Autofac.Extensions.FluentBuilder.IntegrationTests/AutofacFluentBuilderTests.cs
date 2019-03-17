@@ -1,11 +1,14 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Metadata;
 using Autofac.Extensions.FluentBuilder.TestInfrastructure;
 using Autofac.Extensions.FluentBuilder.TestInfrastructure.ClosedTypes;
 using Autofac.Extensions.FluentBuilder.TestInfrastructure.Generics;
 using Autofac.Extensions.FluentBuilder.TestInfrastructure.Modules;
 using Autofac.Extensions.FluentBuilder.TestInfrastructure.Scoped;
 using Autofac.Extensions.FluentBuilder.TestInfrastructure.Singletones;
+using Autofac.Extensions.FluentBuilder.TestInfrastructure.Strategies;
 using Autofac.Extensions.FluentBuilder.TestInfrastructure.Transient;
 using Xunit;
 
@@ -19,6 +22,56 @@ namespace Autofac.Extensions.FluentBuilder.IntegrationTests
         public AutofacFluentBuilderTests()
         {
             this.fluentBuilder = new AutofacFluentBuilder();
+        }
+
+        [Fact]
+        public void AutofacFluent_Builder_RegisterResolver_ExpectInstancePerScope()
+        {
+            this.container = this.fluentBuilder
+                .RegisterTypeAsTransient<GoogleAuthenticationStrategy, IGoogleAuthenticationStrategy>()
+                .RegisterResolver<GoogleAuthenticationStrategy, IGoogleAuthenticationStrategy>(_ => new GoogleAuthenticationStrategy())
+                .Build();
+
+            var googleAuthenticationStrategy = this.container.Resolve<IGoogleAuthenticationStrategy>();
+            
+            Assert.NotNull(googleAuthenticationStrategy);
+        }
+        
+        [Fact]
+        public void AutofacFluent_Builder_RegisterTypedResolver_ExpectInstancePerScope()
+        {
+            this.container = this.fluentBuilder
+                .RegisterTypeAsTransient<GoogleAuthenticationStrategy, IGoogleAuthenticationStrategy>()
+                .RegisterTypeAsTransient<FacebookAuthenticationStrategy, IFacebookAuthenticationStrategy>()
+                .RegisterResolver(Resolver)
+                .Build();
+
+
+            Func<AuthenticationProvider, IAuthenticationStrategy> func;
+            Func<AuthenticationProvider, IAuthenticationStrategy> func2;
+            IGoogleAuthenticationStrategy googleAuth;
+            IGoogleAuthenticationStrategy googleAuth2;
+            IFacebookAuthenticationStrategy facebookAuth;
+            IFacebookAuthenticationStrategy facebookAuth2;
+            
+
+            using (var scope = this.GetLifetimeScope().BeginLifetimeScope())
+            {
+                func = scope.Resolve<Func<AuthenticationProvider, IAuthenticationStrategy>>();
+                googleAuth = (IGoogleAuthenticationStrategy) func(AuthenticationProvider.Google);
+                facebookAuth = (IFacebookAuthenticationStrategy) func(AuthenticationProvider.Facebook);
+                
+                using (var scope2 = this.GetLifetimeScope().BeginLifetimeScope())
+                {
+                    func2 = scope2.Resolve<Func<AuthenticationProvider, IAuthenticationStrategy>>();
+                    googleAuth2 = (IGoogleAuthenticationStrategy) func2(AuthenticationProvider.Google);
+                    facebookAuth2 = (IFacebookAuthenticationStrategy) func2(AuthenticationProvider.Facebook);
+                }
+            }
+            
+            Assert.NotEqual(func, func2);
+            Assert.NotEqual(googleAuth, googleAuth2);
+            Assert.NotEqual(facebookAuth, facebookAuth2);
         }
         
         [Fact]
@@ -359,6 +412,25 @@ namespace Autofac.Extensions.FluentBuilder.IntegrationTests
         private ILifetimeScope GetLifetimeScope()
         {
             return this.container.Resolve<ILifetimeScope>();
+        }
+        
+        private static IAuthenticationStrategy Resolver(IComponentContext ctx, IEnumerable<Autofac.Core.Parameter> @params)
+        {
+            var providers = @params.TypedAs<AuthenticationProvider>();
+
+            switch (providers)
+            {
+                case AuthenticationProvider.Google:
+                {
+                    return ctx.Resolve<IGoogleAuthenticationStrategy>();
+                }
+                case AuthenticationProvider.Facebook:
+                {
+                    return ctx.Resolve<IFacebookAuthenticationStrategy>();
+                }
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
         }
     }
 }

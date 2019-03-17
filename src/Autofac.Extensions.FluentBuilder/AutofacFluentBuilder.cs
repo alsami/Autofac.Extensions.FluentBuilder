@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using Autofac.Core;
@@ -14,6 +15,27 @@ namespace Autofac.Extensions.FluentBuilder
         public AutofacFluentBuilder(ContainerBuilder builder = null)
         {
             this.builder = builder ?? new ContainerBuilder();
+        }
+
+        public AutofacFluentBuilder RegisterResolver<TImplementation, TInterface>(Func<IComponentContext, TInterface> resolver)
+            where TImplementation : TInterface
+        {
+            this.builder
+                .Register(resolver)
+                .As<TInterface>()
+                .InstancePerDependency();
+
+            return this;
+        }
+        
+        public AutofacFluentBuilder RegisterResolver<TType>(Func<IComponentContext, IEnumerable<Parameter>, TType> resolver)
+        {
+            this.builder
+                .Register(resolver)
+                .As<TType>()
+                .InstancePerDependency();
+
+            return this;
         }
 
         public AutofacFluentBuilder RegisterTypeAsSingleton<TImplementation, TInterface>()
