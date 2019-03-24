@@ -2,6 +2,7 @@
 
 [![NuGet](https://img.shields.io/nuget/dt/Autofac.Extensions.FluentBuilder.svg)](https://www.nuget.org/packages/Autofac.Extensions.FluentBuilder) 
 [![NuGet](https://img.shields.io/nuget/vpre/Autofac.Extensions.FluentBuilder.svg)](https://www.nuget.org/packages/Autofac.Extensions.FluentBuilder)
+[![Build Status](https://travis-ci.com/cleancodelabs/Autofac.Extensions.FluentBuilder.svg?branch=master)](https://travis-ci.com/cleancodelabs/Autofac.Extensions.FluentBuilder)
 
 This is a cross platform library, written in .netstandard 2.0, containing a fluent-builder that covers most common usecases to configure your [autofac-ioc-container](https://autofac.org/).
 
