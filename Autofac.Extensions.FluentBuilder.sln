@@ -1,0 +1,74 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29318.209
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{754D64AD-258D-441E-A3EC-FBBF8A65EF8E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{244E5428-D112-4903-8170-213A89C351E5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Autofac.Extensions.FluentBuilder", "src\Autofac.Extensions.FluentBuilder\Autofac.Extensions.FluentBuilder.csproj", "{7C795165-B678-4CA1-B3F1-1ED531B1E576}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "misc", "misc", "{37705C94-B17A-4CD7-9FC7-159578831CAF}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		.travis.yml = .travis.yml
+		changelog.md = changelog.md
+		global.json = global.json
+		licence.md = licence.md
+		publish-packages.sh = publish-packages.sh
+		readme.md = readme.md
+		run-tests.sh = run-tests.sh
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samples", "samples", "{5A9D1681-E609-4696-AF56-04330903E13D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Autofac.Extensions.FluentBuilder.Samples.Shared", "samples\Autofac.Extensions.FluentBuilder.Samples.Shared\Autofac.Extensions.FluentBuilder.Samples.Shared.csproj", "{570F690F-2451-4E8E-BA09-7C59E319AA47}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Autofac.Extensions.FluentBuilder.Samples.Console", "samples\Autofac.Extensions.FluentBuilder.Samples.Console\Autofac.Extensions.FluentBuilder.Samples.Console.csproj", "{4D067997-28C4-4021-994E-9AC2CFF0A419}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Autofac.Extensions.FluentBuilder.Samples.WebApi", "samples\Autofac.Extensions.FluentBuilder.Samples.WebApi\Autofac.Extensions.FluentBuilder.Samples.WebApi.csproj", "{4141E285-5BA1-4590-B1C7-C14E7626F3BF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Autofac.Extensions.FluentBuilder.Tests", "test\Autofac.Extensions.FluentBuilder.Tests\Autofac.Extensions.FluentBuilder.Tests.csproj", "{E2BF5F59-780D-435C-B6AA-68F8FE71E623}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7C795165-B678-4CA1-B3F1-1ED531B1E576}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C795165-B678-4CA1-B3F1-1ED531B1E576}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C795165-B678-4CA1-B3F1-1ED531B1E576}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C795165-B678-4CA1-B3F1-1ED531B1E576}.Release|Any CPU.Build.0 = Release|Any CPU
+		{570F690F-2451-4E8E-BA09-7C59E319AA47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{570F690F-2451-4E8E-BA09-7C59E319AA47}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{570F690F-2451-4E8E-BA09-7C59E319AA47}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{570F690F-2451-4E8E-BA09-7C59E319AA47}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D067997-28C4-4021-994E-9AC2CFF0A419}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D067997-28C4-4021-994E-9AC2CFF0A419}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D067997-28C4-4021-994E-9AC2CFF0A419}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D067997-28C4-4021-994E-9AC2CFF0A419}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4141E285-5BA1-4590-B1C7-C14E7626F3BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4141E285-5BA1-4590-B1C7-C14E7626F3BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4141E285-5BA1-4590-B1C7-C14E7626F3BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4141E285-5BA1-4590-B1C7-C14E7626F3BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E2BF5F59-780D-435C-B6AA-68F8FE71E623}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E2BF5F59-780D-435C-B6AA-68F8FE71E623}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E2BF5F59-780D-435C-B6AA-68F8FE71E623}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E2BF5F59-780D-435C-B6AA-68F8FE71E623}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7C795165-B678-4CA1-B3F1-1ED531B1E576} = {754D64AD-258D-441E-A3EC-FBBF8A65EF8E}
+		{570F690F-2451-4E8E-BA09-7C59E319AA47} = {5A9D1681-E609-4696-AF56-04330903E13D}
+		{4D067997-28C4-4021-994E-9AC2CFF0A419} = {5A9D1681-E609-4696-AF56-04330903E13D}
+		{4141E285-5BA1-4590-B1C7-C14E7626F3BF} = {5A9D1681-E609-4696-AF56-04330903E13D}
+		{E2BF5F59-780D-435C-B6AA-68F8FE71E623} = {244E5428-D112-4903-8170-213A89C351E5}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6AEFE63C-71CE-4F26-8D8D-BD5C40B6BF31}
+	EndGlobalSection
+EndGlobal

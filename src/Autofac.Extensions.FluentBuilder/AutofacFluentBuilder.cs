@@ -8,6 +8,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace Autofac.Extensions.FluentBuilder
 {
+    // ReSharper disable once InconsistentNaming
     public class AutofacFluentBuilder
     {
         private readonly ContainerBuilder builder;

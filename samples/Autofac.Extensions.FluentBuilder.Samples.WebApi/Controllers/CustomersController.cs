@@ -4,13 +4,14 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Autofac.Extensions.FluentBuilder.Samples.WebApi.Controllers
 {
-    [Route("api/[controller]")]
-    public class CustomerController : Controller
+    [ApiController]
+    [Route("api/customers")]
+    public class CustomersController : ControllerBase
     {
         private readonly ClassThatContainsConfiguration classThatContainsConfiguration;
         private readonly ICustomerRepository customerRepository;
 
-        public CustomerController(ClassThatContainsConfiguration classThatContainsConfiguration, ICustomerRepository customerRepository)
+        public CustomersController(ClassThatContainsConfiguration classThatContainsConfiguration, ICustomerRepository customerRepository)
         {
             this.classThatContainsConfiguration = classThatContainsConfiguration;
             this.customerRepository = customerRepository;

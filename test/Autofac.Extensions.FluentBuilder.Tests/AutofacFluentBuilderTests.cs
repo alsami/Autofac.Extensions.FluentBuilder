@@ -1,8 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Reflection.Metadata;
-using Autofac.Extensions.FluentBuilder.TestInfrastructure;
 using Autofac.Extensions.FluentBuilder.TestInfrastructure.ClosedTypes;
 using Autofac.Extensions.FluentBuilder.TestInfrastructure.Generics;
 using Autofac.Extensions.FluentBuilder.TestInfrastructure.Modules;

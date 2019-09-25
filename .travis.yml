@@ -1,8 +1,9 @@
+sudo: required
 dist: bionic
 language: csharp
-solution: autofac-extensions-fluentbuilder.sln
+solution: Autofac.Extensions.FluentBuilder.sln
 mono: none
-dotnet: 2.2.105
+dotnet: 3.0.100
 env:
   global:
     - DOTNET_SKIP_FIRST_TIME_EXPERIENCE=true
