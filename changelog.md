@@ -1,3 +1,9 @@
+# [2.0.0](https://www.nuget.org/packages/Autofac.Extensions.FluentBuilder/2.0.0) (2019-09-25)
+
+## Features
+
+* Update to latest version of `Autofac.Extensions.DependencyInjection` and adjust samples for `ASP.NET Core` / `.NET-Core` 3.0
+
 # [1.5.0](https://www.nuget.org/packages/Autofac.Extensions.FluentBuilder/1.5.0) (2019-03-17)
 
 ## Features
