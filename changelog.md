@@ -1,3 +1,10 @@
+# [2.0.1](https://www.nuget.org/packages/Autofac.Extensions.FluentBuilder/2.0.1) (2019-10-10)
+
+## Features
+
+* Update to version `5.0.1` of `Autofac.Extensions.DependencyInjection`
+* Add multi-target support for `netstandard2.0` and `netstandard2.1` 
+
 # [2.0.0](https://www.nuget.org/packages/Autofac.Extensions.FluentBuilder/2.0.0) (2019-09-25)
 
 ## Features
