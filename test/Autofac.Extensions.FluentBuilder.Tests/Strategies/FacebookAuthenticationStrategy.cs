@@ -1,4 +1,4 @@
-namespace Autofac.Extensions.FluentBuilder.TestInfrastructure.Strategies
+namespace Autofac.Extensions.FluentBuilder.Tests.Strategies
 {
     public class FacebookAuthenticationStrategy : IFacebookAuthenticationStrategy {}
 }

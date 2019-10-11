@@ -1,15 +1,15 @@
 using System;
 using System.Collections.Generic;
-using Autofac.Extensions.FluentBuilder.TestInfrastructure.ClosedTypes;
-using Autofac.Extensions.FluentBuilder.TestInfrastructure.Generics;
-using Autofac.Extensions.FluentBuilder.TestInfrastructure.Modules;
-using Autofac.Extensions.FluentBuilder.TestInfrastructure.Scoped;
-using Autofac.Extensions.FluentBuilder.TestInfrastructure.Singletones;
-using Autofac.Extensions.FluentBuilder.TestInfrastructure.Strategies;
-using Autofac.Extensions.FluentBuilder.TestInfrastructure.Transient;
+using Autofac.Extensions.FluentBuilder.Tests.ClosedTypes;
+using Autofac.Extensions.FluentBuilder.Tests.Generics;
+using Autofac.Extensions.FluentBuilder.Tests.Modules;
+using Autofac.Extensions.FluentBuilder.Tests.Scoped;
+using Autofac.Extensions.FluentBuilder.Tests.Singletones;
+using Autofac.Extensions.FluentBuilder.Tests.Strategies;
+using Autofac.Extensions.FluentBuilder.Tests.Transient;
 using Xunit;
 
-namespace Autofac.Extensions.FluentBuilder.IntegrationTests
+namespace Autofac.Extensions.FluentBuilder.Tests
 {
     public class AutofacFluentBuilderTests : IDisposable
     {
@@ -28,6 +28,11 @@ namespace Autofac.Extensions.FluentBuilder.IntegrationTests
                 .RegisterTypeAsTransient<GoogleAuthenticationStrategy, IGoogleAuthenticationStrategy>()
                 .RegisterResolver<GoogleAuthenticationStrategy, IGoogleAuthenticationStrategy>(_ => new GoogleAuthenticationStrategy())
                 .Build();
+
+            using (var scope = container.BeginLifetimeScope(b => b.Register(_ => new object())))
+            {
+                
+            }
 
             var googleAuthenticationStrategy = this.container.Resolve<IGoogleAuthenticationStrategy>();
             
@@ -125,12 +130,12 @@ namespace Autofac.Extensions.FluentBuilder.IntegrationTests
         public void AutofacFluentBuilder_RegisterTransientAndResolve_ExpectDifferentInstances()
         {
             this.container = this.fluentBuilder
-                .RegisterTypeAsTransient<Transient, ITransient>()
-                .RegisterTypeAsTransient<Transient>()
+                .RegisterTypeAsTransient<Transient.Transient, ITransient>()
+                .RegisterTypeAsTransient<Transient.Transient>()
                 .Build();
 
             Assert.True(this.container.IsRegistered<ITransient>(), "ITransient not registered!");
-            Assert.True(this.container.IsRegistered<Transient>(), "Transient not registered!");
+            Assert.True(this.container.IsRegistered<Transient.Transient>(), "Transient not registered!");
 
             ITransient t1;
             ITransient t2;
@@ -145,13 +150,13 @@ namespace Autofac.Extensions.FluentBuilder.IntegrationTests
             Assert.NotNull(t2);
             Assert.NotEqual(t1, t2);
 
-            Transient s3;
-            Transient s4;
+            Transient.Transient s3;
+            Transient.Transient s4;
             
             using (var scope = this.GetLifetimeScope().BeginLifetimeScope())
             {
-                s3 = scope.Resolve<Transient>();
-                s4 = scope.Resolve<Transient>();
+                s3 = scope.Resolve<Transient.Transient>();
+                s4 = scope.Resolve<Transient.Transient>();
             }
             
             Assert.NotNull(s3);
@@ -163,12 +168,12 @@ namespace Autofac.Extensions.FluentBuilder.IntegrationTests
         public void AutofacFluentBuilder_RegisterScopedAndResolve_ExpectSameInstances()
         {
             this.container = this.fluentBuilder
-                .RegisterTypeAsScoped<Scoped, IScoped>()
-                .RegisterTypeAsScoped<Scoped>()
+                .RegisterTypeAsScoped<Scoped.Scoped, IScoped>()
+                .RegisterTypeAsScoped<Scoped.Scoped>()
                 .Build();
 
             Assert.True(this.container.IsRegistered<IScoped>(), "IScoped not registered!");
-            Assert.True(this.container.IsRegistered<Scoped>(), "Scoped not registered!");
+            Assert.True(this.container.IsRegistered<Scoped.Scoped>(), "Scoped not registered!");
             
             using (var scope = this.GetLifetimeScope().BeginLifetimeScope())
             {
@@ -183,8 +188,8 @@ namespace Autofac.Extensions.FluentBuilder.IntegrationTests
             
             using (var scope = this.GetLifetimeScope().BeginLifetimeScope())
             {
-                var s3 = scope.Resolve<Scoped>();
-                var s4 = scope.Resolve<Scoped>();
+                var s3 = scope.Resolve<Scoped.Scoped>();
+                var s4 = scope.Resolve<Scoped.Scoped>();
                 Assert.NotNull(s3);
                 Assert.NotNull(s4);
                 Assert.Equal(s3, s4);
@@ -231,7 +236,7 @@ namespace Autofac.Extensions.FluentBuilder.IntegrationTests
         public void AutofacFluentBuilder_RegisterInstanceNoneMatchingType_ExpectException()
         {
             Assert.Throws<ArgumentException>(() => this.fluentBuilder
-                .RegisterInstance<ISingleton>(new Scoped()));
+                .RegisterInstance<ISingleton>(new Scoped.Scoped()));
         }
         
         [Fact]

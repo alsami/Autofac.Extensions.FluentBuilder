@@ -1,9 +1,9 @@
-﻿using Autofac.Extensions.FluentBuilder.TestInfrastructure.Generics;
-using Autofac.Extensions.FluentBuilder.TestInfrastructure.Scoped;
-using Autofac.Extensions.FluentBuilder.TestInfrastructure.Singletones;
-using Autofac.Extensions.FluentBuilder.TestInfrastructure.Transient;
+﻿using Autofac.Extensions.FluentBuilder.Tests.Generics;
+using Autofac.Extensions.FluentBuilder.Tests.Scoped;
+using Autofac.Extensions.FluentBuilder.Tests.Singletones;
+using Autofac.Extensions.FluentBuilder.Tests.Transient;
 
-namespace Autofac.Extensions.FluentBuilder.TestInfrastructure.Modules
+namespace Autofac.Extensions.FluentBuilder.Tests.Modules
 {
     public class MultiItemModule : Module
     {

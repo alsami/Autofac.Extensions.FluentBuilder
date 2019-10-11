@@ -1,4 +1,4 @@
-﻿namespace Autofac.Extensions.FluentBuilder.TestInfrastructure.Generics
+﻿namespace Autofac.Extensions.FluentBuilder.Tests.Generics
 {
     public class GenericClass : IGenericType
     {
